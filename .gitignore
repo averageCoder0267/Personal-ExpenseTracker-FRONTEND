@@ -31,6 +31,5 @@ public/*.map
 *.bak
 *.tmp
 package.json
-package-lock.json
 .next/
 README.md
