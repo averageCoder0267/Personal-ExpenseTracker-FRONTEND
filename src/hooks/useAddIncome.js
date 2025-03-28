@@ -6,7 +6,7 @@ export default async function useAddIncome(inputFields, userId, token) {
             incomeCategories.push({ userId, categoryName: ele });
         }
     })
-    const blob = await fetch("https://personal-expensetracker-backend.onrender.com/category/addIncome", {
+    const blob = await fetch("http://localhost:4050/category/addIncome", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",

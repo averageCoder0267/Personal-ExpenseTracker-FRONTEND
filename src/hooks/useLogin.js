@@ -1,7 +1,7 @@
 
 export default async function useLogin(username, password) {
     try {
-        const blob = await fetch("https://personal-expensetracker-backend.onrender.com/auth/logIn", {
+        const blob = await fetch("http://localhost:4050/auth/logIn", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

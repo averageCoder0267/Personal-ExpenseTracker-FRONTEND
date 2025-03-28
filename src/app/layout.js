@@ -1,4 +1,3 @@
-// https://personal-expensetracker-backend.onrender.com
 
 export default function RootLayout({ children }) {
   return (

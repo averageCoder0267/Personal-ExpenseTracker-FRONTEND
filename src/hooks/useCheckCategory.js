@@ -1,6 +1,6 @@
 
 export default async function useCheckCategory(id, token) {
-    const blob = await fetch(`https://personal-expensetracker-backend.onrender.com/category/checkCategories/${id}`, {
+    const blob = await fetch(`http://localhost:4050/category/checkCategories/${id}`, {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
