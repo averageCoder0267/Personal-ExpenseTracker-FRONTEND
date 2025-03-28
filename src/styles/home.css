@@ -1,0 +1,496 @@
+:root {
+    --primary: #565bd9;
+    --secondary: #030112;
+}
+
+@font-face {
+    font-family: poppinsLight;
+    src: url(../fonts/Poppins/Poppins-Light.ttf);
+}
+
+@font-face {
+    font-family: poppins;
+    src: url(../fonts/Poppins/Poppins-Regular.ttf);
+}
+
+@font-face {
+    font-family: poppinsSemiBold;
+    src: url(../fonts/Poppins/Poppins-SemiBold.ttf);
+}
+
+@font-face {
+    font-family: poppinsBold;
+    src: url(../fonts/Poppins/Poppins-Bold.ttf);
+}
+
+@font-face {
+    font-family: poppinsExtraBold;
+    src: url(../fonts/Poppins/Poppins-ExtraBold.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+    user-select: none;
+}
+
+body {
+    background-color: var(--secondary);
+}
+
+#header {
+    user-select: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    font-family: poppinsExtraBold;
+    cursor: pointer;
+}
+
+#headerIcon {
+    width: 50px;
+    height: 50px;
+    margin-right: 50px;
+}
+
+#headerHead {
+    font-size: 48px;
+}
+
+#sectionA {
+    padding: 25px 50px;
+}
+
+#balanceBox {
+    text-align-last: center;
+}
+
+#balanceHead {
+    font-family: poppinsBold;
+    font-size: 40px;
+}
+
+#balanceAmount {
+    font-family: poppinsSemiBold;
+    color: var(--primary);
+    font-size: 32px;
+}
+
+#balanceSubBox {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.balanceSubBoxes {
+    text-align: center;
+}
+
+#incomeHead {
+    font-family: poppinsBold;
+}
+
+#incomeAmount {
+    font-family: poppinsSemiBold;
+    color: var(--primary);
+    font-size: 24px;
+}
+
+#expenseHead {
+    font-family: poppinsBold;
+}
+
+#expenseAmount {
+    font-family: poppinsSemiBold;
+    color: var(--primary);
+    font-size: 24px;
+}
+
+#sectionB {
+    padding: 25px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#expenseChartBox {
+    width: 75%;
+    height: max-content;
+}
+
+#expenseChartHead {
+    font-family: poppinsBold;
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 50px;
+}
+
+#sectionC {
+    padding: 25px 50px;
+}
+
+#sectionChead {
+    font-family: poppinsBold;
+    text-align: center;
+    font-size: 40px;
+}
+
+.recentTransactionLists {
+    box-shadow: 2px 2px 0px 0px var(--primary);
+    font-size: 32px;
+    padding: 12px 24px;
+    font-family: poppins;
+    margin-bottom: 25px;
+}
+
+.transactionListsAmont {
+    float: right;
+}
+
+#transactionHistoryButton {
+    border: none;
+    border-radius: 25px;
+    background-color: var(--primary);
+    color: white;
+    font-family: poppinsSemiBold;
+    padding: 16px 32px;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+#transactionHistoryButton svg {
+    width: 20px;
+    height: 100%;
+}
+
+#sectionD {
+    padding: 25px 50px;
+}
+
+#sectionDhead {
+    font-size: 40px;
+    font-family: poppinsBold;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+#quickActionContainer {
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.quickActionButtonBoxes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.quickActionButtons {
+    border: none;
+    background-color: var(--primary);
+    color: white;
+    font-family: poppinsSemiBold;
+    padding: 16px 32px;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.quickActionButtons svg {
+    width: 25px;
+    height: 25px;
+}
+
+@media (max-width: 1024px) {
+
+    #headerIcon {
+        width: 60px;
+        height: 60px;
+    }
+
+    #headerHead {
+        font-size: 64px;
+    }
+
+    #sectionA {
+        padding: 20px 40px;
+    }
+
+    #sectionB {
+        padding: 20px 40px;
+    }
+
+    #expenseChartBox {
+        width: 75%;
+    }
+
+    #expenseChartHead {
+        font-size: 40px;
+        margin-bottom: 40px;
+    }
+
+    #sectionC {
+        padding: 20px 40px;
+    }
+
+    #sectionChead {
+        font-size: 40px;
+        margin-bottom: 40px;
+    }
+
+    .recentTransactionLists {
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+
+    #transactionHistoryButton {
+        padding: 16px 32px;
+        font-size: 24px;
+    }
+
+    #transactionHistoryButton svg {
+        width: 20px;
+        height: 100%;
+    }
+
+
+    #sectionD {
+        padding: 20px 40px;
+    }
+
+    #sectionDhead {
+        font-size: 40px;
+        font-family: poppinsBold;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    #quickActionContainer {
+        display: grid;
+        grid-template-columns: auto auto auto;
+    }
+
+    .quickActionButtons {
+        padding: 16px 32px;
+        font-size: 24px;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    #sectionA {
+        padding: 25px;
+    }
+
+    #balanceHead {
+        font-size: 40px;
+    }
+
+    #balanceAmount {
+        font-size: 32px;
+    }
+
+    #balanceSubBox {
+        margin-top: 25px;
+    }
+
+    #incomeHead {
+        font-size: 32px;
+    }
+
+    #incomeAmount {
+        font-size: 24px;
+    }
+
+    #expenseHead {
+        font-size: 32px;
+    }
+
+    #expenseAmount {
+        font-size: 24px;
+    }
+
+    #sectionB {
+        padding: 25px;
+    }
+
+    #expenseChartBox {
+        width: 100%;
+    }
+
+    #expenseChartHead {
+        font-size: 40px;
+        margin-bottom: 25px;
+    }
+
+    #sectionC {
+        padding: 25px;
+    }
+
+    #sectionChead {
+        font-size: 40px;
+    }
+
+    #recentTransaction {
+        padding: 0 15px;
+    }
+
+    .recentTransactionLists {
+        font-size: 32px;
+        margin-bottom: 12px;
+    }
+
+    #transactionHistoryButton {
+        padding: 16px 32px;
+        font-size: 24px;
+    }
+
+    #transactionHistoryButton svg {
+        width: 20px;
+        height: 100%;
+    }
+
+    #sectionD {
+        padding: 25px;
+    }
+
+    #sectionDhead {
+        font-size: 40px;
+        font-family: poppinsBold;
+        text-align: center;
+        margin-bottom: 25px;
+    }
+
+    #quickActionContainer {
+        display: grid;
+        grid-template-columns: auto auto auto;
+    }
+
+    .quickActionButtons {
+        padding: 10px 20px;
+        font-size: 18px;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    #header {
+        padding: 10px;
+    }
+
+    #headerIcon {
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+    }
+
+    #headerHead {
+        font-size: 32px;
+    }
+
+    #sectionA {
+        padding: 10px;
+    }
+
+    #balanceHead {
+        font-size: 24px;
+    }
+
+    #balanceAmount {
+        font-size: 24px;
+    }
+
+    #balanceSubBox {
+        margin-top: 10px;
+    }
+
+    #incomeHead {
+        font-size: 24px;
+    }
+
+    #incomeAmount {
+        font-size: 16px;
+    }
+
+    #expenseHead {
+        font-size: 24px;
+    }
+
+    #expenseAmount {
+        font-size: 16px;
+    }
+
+    #sectionB {
+        padding: 10px;
+    }
+
+    #expenseChartHead {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    #sectionC {
+        padding: 10px;
+    }
+
+    #sectionChead {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    #recentTransaction {
+        padding: 10px;
+    }
+
+    .recentTransactionLists {
+        font-size: 16px;
+        margin-bottom: 5px;
+    }
+
+    #transactionHistoryButton {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    #transactionHistoryButton svg {
+        width: 15px;
+        height: 100%;
+    }
+
+    #sectionD {
+        padding: 10px;
+    }
+
+    #sectionDhead {
+        font-size: 24px;
+        font-family: poppinsBold;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    #quickActionContainer {
+        display: grid;
+        grid-template-columns: auto auto auto;
+    }
+
+    .quickActionButtons {
+        padding: 8px 10px;
+        font-size: 8px;
+    }
+
+    .quickActionButtons svg{
+        width: 15px;
+        height: 15px;
+    }
+
+}

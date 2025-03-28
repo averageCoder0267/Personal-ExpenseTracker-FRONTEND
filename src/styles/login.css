@@ -1,0 +1,242 @@
+:root {
+    --primary: #565bd9;
+    --secondary: #030112;
+}
+
+@font-face {
+    font-family: poppins;
+    src: url(../fonts/Poppins/Poppins-Regular.ttf);
+}
+
+@font-face {
+    font-family: poppinsBold;
+    src: url(../fonts/Poppins/Poppins-Bold.ttf);
+}
+
+@font-face {
+    font-family: poppinsExtraBold;
+    src: url(../fonts/Poppins/Poppins-ExtraBold.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+}
+
+#bodyContainer {
+    background-color: var(--secondary);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#mesgBox {
+    position: fixed;
+    top: -50%;
+    left: 0;
+    width: 100%;
+    height: max-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all linear 0.5s;
+}
+
+#eventMesg {
+    border-radius: 50px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15),
+        0 2px 5px rgba(0, 0, 0, 0.1),
+        0 0 15px rgba(59, 130, 246, 0.3);
+    background-color: var(--primary);
+    color: white;
+    font-size: 24px;
+    font-family: poppinsBold;
+    padding: 12px 28px;
+}
+
+#container {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15),
+        0 2px 5px rgba(0, 0, 0, 0.1),
+        0 0 15px var(--primary);
+    background-color: transparent;
+    width: 45%;
+    display: grid;
+    grid-template-columns: 100%;
+    row-gap: 20px;
+    padding: 20px 40px;
+    transition: all linear 0.5s;
+    filter: opacity(0);
+    transform: translateY(-100px);
+}
+
+#headingBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: max-content;
+}
+
+#heading {
+    font-family: poppinsExtraBold;
+    font-size: 32px;
+}
+
+
+#form {
+    height: max-content;
+    display: grid;
+    gap: 20px;
+    padding: 20px 40px;
+}
+
+.formInputs {
+    border: 1px solid var(--primary);
+    background-color: transparent;
+    padding: 10px 25px;
+    font-size: 20px;
+    font-family: poppins;
+    transition: all linear 0.1s;
+}
+
+.formInputs:active {
+    padding: 10px 20px;
+}
+
+#logInButton {
+    background-color: var(--primary);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 22px;
+    font-family: poppinsBold;
+    cursor: pointer;
+}
+
+#signUpBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#signUpPara {
+    font-size: 20px;
+    font-family: poppins;
+}
+
+#signUpLink {
+    font-size: 22px;
+    font-family: poppinsBold;
+    color: var(--primary);
+    cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+
+    #container {
+        width: 60%;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    #container {
+        width: 95%;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    #eventMesg {
+        font-size: 16px;
+    }
+
+    #container {
+        width: 95%;
+        row-gap: 15px;
+        padding: 20px 0px;
+    }
+
+    #heading {
+        font-size: 24px;
+    }
+
+    #form {
+        gap: 15px;
+        padding: 20px 20px;
+    }
+
+    .formInputs {
+        padding: 9px 18px;
+        font-size: 16px;
+    }
+
+    .formInputs:active {
+        padding: 9px 16px;
+    }
+
+    #logInButton {
+        padding: 9px 18px;
+        font-size: 16px;
+    }
+
+    #signUpPara {
+        font-size: 16px;
+    }
+
+    #signUpLink {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 375px) {
+
+    #eventMesg {
+        font-size: 16px;
+    }
+
+    #container {
+        width: 95%;
+        row-gap: 5px;
+        padding: 20px 0px;
+    }
+
+    #heading {
+        font-size: 20px;
+    }
+
+    #form {
+        gap: 10px;
+        padding: 20px 20px;
+    }
+
+    .formInputs {
+        padding: 8px 16px;
+        font-size: 12px;
+    }
+
+    .formInputs:active {
+        padding: 8px 15px;
+    }
+
+    #logInButton {
+        padding: 8px 16px;
+        font-size: 12px;
+    }
+
+    #signUpPara {
+        font-size: 12px;
+    }
+
+    #signUpLink {
+        font-size: 13px;
+    }
+}

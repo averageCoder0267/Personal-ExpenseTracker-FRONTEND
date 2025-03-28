@@ -1,0 +1,262 @@
+:root {
+    --primary: #565bd9;
+    --secondary: #030112;
+}
+
+@font-face {
+    font-family: poppinsLight;
+    src: url(../fonts/Poppins/Poppins-Light.ttf);
+}
+
+@font-face {
+    font-family: poppins;
+    src: url(../fonts/Poppins/Poppins-Regular.ttf);
+}
+
+@font-face {
+    font-family: poppinsSemiBold;
+    src: url(../fonts/Poppins/Poppins-SemiBold.ttf);
+}
+
+@font-face {
+    font-family: poppinsBold;
+    src: url(../fonts/Poppins/Poppins-Bold.ttf);
+}
+
+@font-face {
+    font-family: poppinsExtraBold;
+    src: url(../fonts/Poppins/Poppins-ExtraBold.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+}
+
+body {
+    background-color: var(--secondary);
+}
+
+#header {
+    user-select: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    font-family: poppinsExtraBold;
+    cursor: pointer;
+}
+
+#headerIcon {
+    width: 50px;
+    height: 50px;
+    margin-right: 50px;
+}
+
+#headerHead {
+    font-size: 48px;
+}
+
+#expenseCategorySection {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    padding: 50px;
+    margin-top: 50px;
+}
+
+#expenseCategoryHead {
+    font-size: 48px;
+    font-family: poppinsExtraBold;
+}
+
+#expenseCategoryHead span {
+    color: var(--primary);
+}
+
+#expenseCategorySubHead {
+    font-size: 32px;
+    font-family: poppinsLight;
+    margin-top: 10px;
+}
+
+#expenseCategorySubHead span {
+    color: var(--primary);
+}
+
+#expenseCategorySubSection2 {
+    display: flex;
+    justify-content: center;
+}
+
+#form {
+    border-radius: 20px;
+    box-shadow: 1px 1px 10px 1px var(--primary);
+    width: 80%;
+    padding: 50px;
+}
+
+#expenseInputBox {
+    padding: 10px 20px;
+    max-height: 152px;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    scroll-behavior: smooth;
+    scrollbar-color: var(--secondary) var(--primary);
+}
+
+.expenseInputFields {
+    border-radius: 5px;
+    border: 1px solid var(--primary);
+    background-color: transparent;
+    width: 100%;
+    padding: 12px 24px;
+    font-size: 24px;
+    font-family: poppins;
+    margin-bottom: 5px;
+}
+
+#expenseButtonBox {
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.expenseButtons {
+    border: none;
+    border-radius: 10px;
+    background-color: var(--primary);
+    padding: 8px 16px;
+    font-size: 16px;
+    font-family: poppinsSemiBold;
+}
+
+@media (max-width: 1024px) {
+
+    #headerIcon {
+        width: 60px;
+        height: 60px;
+    }
+
+    #headerHead {
+        font-size: 64px;
+    }
+
+    #expenseCategorySection {
+        grid-template-columns: 100%;
+        padding: 40px;
+        margin-top: 50px;
+        row-gap: 50px;
+    }
+
+    #expenseCategorySubSection1 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #expenseCategoryHead {
+        text-align: center;
+        font-size: 48px;
+    }
+
+    #expenseCategorySubHead {
+        font-size: 32px;
+        text-align: center;
+    }
+
+    #form {
+        width: 90%;
+        padding: 40px;
+    }
+
+    .expenseInputFields {
+        font-size: 32px;
+    }
+
+    .expenseButtons {
+        font-size: 24px;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    #expenseCategorySection {
+        grid-template-columns: 100%;
+        padding: 25px;
+        margin-top: 25px;
+        row-gap: 50px;
+    }
+
+    #expenseCategoryHead {
+        font-size: 40px;
+    }
+
+    #expenseCategorySubHead {
+        width: 70%;
+        text-align: center;
+        font-size: 24px;
+    }
+
+    #form {
+        padding: 25px;
+    }
+
+    .expenseInputFields {
+        font-size: 24px;
+    }
+
+    .expenseButtons {
+        font-size: 16px;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    #header {
+        padding: 10px;
+    }
+
+    #headerIcon {
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+    }
+
+    #headerHead {
+        font-size: 32px;
+    }
+
+
+    #expenseCategorySection {
+        grid-template-columns: 100%;
+        padding: 10px;
+        margin-top: 10px;
+        row-gap: 25px;
+    }
+
+    #expenseCategoryHead {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    #expenseCategorySubHead {
+        width: 100%;
+        font-size: 16px;
+        text-align: center;
+    }
+
+    #form {
+        padding: 20px;
+    }
+
+    .expenseInputFields {
+        font-size: 16px;
+    }
+
+}

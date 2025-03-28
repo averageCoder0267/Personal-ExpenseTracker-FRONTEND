@@ -1,0 +1,36 @@
+# Node.js dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build output
+build/
+dist/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Logs
+logs/
+*.log
+
+# Editor directories and files
+.vscode/
+.idea/
+*.swp
+
+# React specific
+.DS_Store
+public/*.cache
+public/*.map
+
+# Misc
+*.bak
+*.tmp
+package.json
+package-lock.json
+.next/
+README.md
