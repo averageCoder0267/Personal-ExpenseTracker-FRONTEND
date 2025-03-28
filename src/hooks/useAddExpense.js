@@ -6,7 +6,7 @@ export default async function useAddExpense(inputFields, userId, token) {
             expenseCategories.push({ userId, categoryName: ele });
         }
     })
-    const blob = await fetch("http://localhost:4050/category/addIncome", {
+    const blob = await fetch("http://localhost:4050/category/addExpense", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
