@@ -30,6 +30,6 @@ public/*.map
 # Misc
 *.bak
 *.tmp
-package.json
+package-lock.json
 .next/
 README.md
