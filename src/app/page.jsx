@@ -4,6 +4,7 @@ import Link from "next/link";
 import "@/styles/home.css";
 import { useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
+import useGetTransactions from "@/hooks/useGetTransactions";
 
 export default function Home() {
 
@@ -11,11 +12,16 @@ export default function Home() {
   const search = useSearchParams();
   const token = search.get("token");
   const userId = search.get("userId");
+  const [balance, setBalance] = useState(0);
+  const [income, setIncome] = useState(0);
+  const [expense, setExpense] = useState(0);
+  const [transactionHistory, setTransactionHistory] = useState(["No history found"]);
   const [transition, setTransition] = useState({
     filter: "opacity(0)",
     transform: "translateY(-100px)",
     transition: "all linear 0.5s"
   })
+
   useEffect(() => {
     if (token == undefined) {
       setTimeout(() => {
@@ -23,12 +29,33 @@ export default function Home() {
         router.push("/Authentication/Login");
       }, 5000);
     }
+    fetchData();
     setTransition({
       filter: "opacity(1)",
       transform: "translateY(0)",
       transition: "all linear 0.5s"
     });
   }, [])
+
+  async function fetchData() {
+    const { transaction } = await useGetTransactions(userId, token);
+    let auxBalance = 0;
+    let auxIncome = 0;
+    let auxExpense = 0;
+    transaction.map((ele) => {
+      if (ele.transactionType == "INCOME") {
+        auxBalance += ele.amount;
+        auxIncome += ele.amount;
+      } else {
+        auxBalance -= ele.amount;
+        auxExpense += ele.amount;
+      }
+    })
+    setIncome(auxIncome);
+    setExpense(auxExpense);
+    setBalance(auxBalance);
+    setTransactionHistory([...transaction]);
+  }
 
   return (
     <div>
@@ -46,16 +73,16 @@ export default function Home() {
       <div style={transition} id="sectionA">
         <div id="balanceBox">
           <h1 id="balanceHead">Total Balance</h1>
-          <p id="balanceAmount">15000</p>
+          <p id="balanceAmount">{balance}</p>
         </div>
         <div id="balanceSubBox">
           <div id="incomeBox" className="balanceSubBoxes">
             <h1 id="incomeHead">Income</h1>
-            <p id="incomeAmount">20000</p>
+            <p id="incomeAmount">{income}</p>
           </div>
           <div id="expenseBox" className="balanceSubBoxes">
             <h1 id="expenseHead">Expense</h1>
-            <p id="expenseAmount">5000</p>
+            <p id="expenseAmount">{expense}</p>
           </div>
         </div>
       </div>
@@ -70,14 +97,29 @@ export default function Home() {
       <div style={transition} id="sectionC">
         <h1 id="sectionChead">Recent Transactions</h1>
         <ol id="recentTransaction" type="1">
-          <li className="recentTransactionLists"><span className="transactionListsDetail">Pizza | Cash | Debit</span><span
-            className="transactionListsAmont">299</span></li>
-          <li className="recentTransactionLists"><span className="transactionListsDetail">Pizza | Cash | Debit</span><span
-            className="transactionListsAmont">299</span></li>
-          <li className="recentTransactionLists"><span className="transactionListsDetail">Pizza | Cash | Debit</span><span
-            className="transactionListsAmont">299</span></li>
-          <li className="recentTransactionLists"><span className="transactionListsDetail">Pizza | Cash | Debit</span><span
-            className="transactionListsAmont">299</span></li>
+          {
+            (transactionHistory.length != 0)
+              ? (
+                transactionHistory.map((ele, i) => {
+                  if (typeof ele == "string") {
+                    return (
+                      <li key={i} className="recentTransactionLists"><span className="transactionListsDetail">{ele}</span><span
+                        className="transactionListsAmont">NaN</span></li>
+                    )
+                  } else {
+                    return (
+                      <li key={i} className="recentTransactionLists">
+                        <span className="transactionListsDetail">{ele.title} | {ele.paymentMethod} | {(ele.transactionType == "INCOME" ? "Credit" : "Debit")}</span>
+                        <span className="transactionListsAmont">{ele.amount}</span>
+                      </li>
+                    )
+                  }
+                })
+              ) : (
+                <li key={0} className="recentTransactionLists"><span className="transactionListsDetail">No history found</span><span
+                  className="transactionListsAmont">NaN</span></li>
+              )
+          }
         </ol>
         <button id="transactionHistoryButton">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"

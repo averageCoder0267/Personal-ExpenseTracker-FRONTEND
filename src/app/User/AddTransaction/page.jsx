@@ -20,7 +20,11 @@ export default function AddTransaction() {
     const [categoryName, setCategoryName] = useState("Select Category");
     const [paymentMethod, setPaymentMethod] = useState("Select Payment");
     const [currentList, setCurrentList] = useState([{ categoryName: "Select Category" }]);
-
+    const [transition, setTransition] = useState({
+        filter: "opacity(0)",
+        transform: "translateY(-100px)",
+        transition: "all linear 0.5s"
+    })
     useEffect(() => {
         if (token == undefined) {
             setTimeout(() => {
@@ -28,6 +32,11 @@ export default function AddTransaction() {
                 router.push("/Authentication/Login");
             }, 2500);
         }
+        setTransition({
+            filter: "opacity(1)",
+            transform: "translateY(0)",
+            transition: "all linear 0.5s"
+        });
     }, []);
 
     useEffect(() => {
@@ -79,9 +88,7 @@ export default function AddTransaction() {
             year
         };
         useSubmitTransaction(addTransaction, token);
-        setTimeout(() => {
-            router.push(`/?token=${token}&userId=${userId}`);
-        }, 1000);
+        router.push(`/?token=${token}&userId=${userId}`);
     }
 
     return (
@@ -97,7 +104,7 @@ export default function AddTransaction() {
                 <h1 id="headerHead">Expense Tracker</h1>
             </header>
 
-            <div id="addTransactionContainer">
+            <div style={transition} id="addTransactionContainer">
                 <h1 id="addTransactionHead">Add Your Transaction</h1>
                 <form id="addTransactionForm" onSubmit={(e) => { e.preventDefault() }}>
                     <div style={{ display: "flex", justifyContent: "center" }}>
