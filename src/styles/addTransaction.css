@@ -1,0 +1,331 @@
+:root {
+    --primary: #565bd9;
+    --secondary: #030112;
+}
+
+@font-face {
+    font-family: poppinsLight;
+    src: url(../fonts/Poppins/Poppins-Light.ttf);
+}
+
+@font-face {
+    font-family: poppins;
+    src: url(../fonts/Poppins/Poppins-Regular.ttf);
+}
+
+@font-face {
+    font-family: poppinsSemiBold;
+    src: url(../fonts/Poppins/Poppins-SemiBold.ttf);
+}
+
+@font-face {
+    font-family: poppinsBold;
+    src: url(../fonts/Poppins/Poppins-Bold.ttf);
+}
+
+@font-face {
+    font-family: poppinsExtraBold;
+    src: url(../fonts/Poppins/Poppins-ExtraBold.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+    user-select: none;
+}
+
+body {
+    background-color: var(--secondary);
+}
+
+#header {
+    user-select: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    font-family: poppinsExtraBold;
+    cursor: pointer;
+}
+
+#headerIcon {
+    width: 50px;
+    height: 50px;
+    margin-right: 50px;
+}
+
+#headerHead {
+    font-size: 48px;
+}
+
+#addTransactionContainer {
+    padding: 25px 50px;
+}
+
+#addTransactionHead {
+    text-align: center;
+    font-size: 44px;
+    font-family: poppinsBold;
+}
+
+#transactionTypeButtonBox {
+    margin-top: 15px;
+    width: 70%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.transactionTypeButtons {
+    border-color: var(--primary);
+    background-color: transparent;
+    color: white;
+    font-family: poppinsSemiBold;
+    padding: 16px 32px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+#titleAmountInputBox {
+    margin-top: 15px;
+    width: 70%;
+}
+
+#titleInput,
+#amountInput {
+    border: 1px solid var(--primary);
+    background-color: transparent;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 12px 24px;
+    font-size: 24px;
+    font-family: poppins;
+}
+
+#dropdownBox {
+    width: 70%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#categoryDropdown {
+    background-color: transparent;
+    padding: 15px 30px;
+    font-size: 24px;
+    font-family: poppins;
+}
+
+.categoryDropdownOptions {
+    background-color: var(--secondary);
+}
+
+#paymentMethodDropdown {
+    background-color: transparent;
+    padding: 15px 30px;
+    font-size: 24px;
+    font-family: poppins;
+}
+
+.paymentMethodDropdownOptions {
+    background-color: var(--secondary);
+}
+
+#submitTransactionButton {
+    margin-top: 25px;
+    border-color: var(--secondary);
+    background-color: var(--primary);
+    color: white;
+    font-family: poppinsSemiBold;
+    padding: 16px 32px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+
+    #headerIcon {
+        width: 60px;
+        height: 60px;
+    }
+
+    #headerHead {
+        font-size: 64px;
+    }
+
+    #addTransactionContainer {
+        padding: 20px 40px;
+    }
+
+    #addTransactionHead {
+        font-size: 40px;
+    }
+
+    #transactionTypeButtonBox {
+        margin-top: 15px;
+        width: 100%;
+    }
+
+    .transactionTypeButtons {
+        padding: 16px 32px;
+        font-size: 24px;
+    }
+
+
+    #titleAmountInputBox {
+        margin-top: 25px;
+        width: 80%;
+    }
+
+    #titleInput,
+    #amountInput {
+        width: 100%;
+        margin-bottom: 10px;
+        padding: 12px 24px;
+        font-size: 24px;
+    }
+
+
+    #dropdownBox {
+        width: 70%;
+    }
+
+    #categoryDropdown {
+        padding: 15px 30px;
+        font-size: 24px;
+    }
+
+    #paymentMethodDropdown {
+        padding: 15px 30px;
+        font-size: 24px;
+    }
+
+    #submitTransactionButton {
+        margin-top: 25px;
+        padding: 16px 32px;
+        font-size: 24px;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    #addTransactionContainer {
+        padding: 25px;
+    }
+
+    #transactionTypeButtonBox {
+        margin-top: 15px;
+        width: 100%;
+    }
+
+    .transactionTypeButtons {
+        padding: 16px 32px;
+        font-size: 24px;
+    }
+
+    #titleAmountInputBox {
+        margin-top: 25px;
+        width: 90%;
+    }
+
+    #titleInput,
+    #amountInput {
+        width: 100%;
+        margin-bottom: 20px;
+        padding: 12px 24px;
+        font-size: 24px;
+    }
+
+    #dropdownBox {
+        width: 80%;
+    }
+
+    #categoryDropdown {
+        padding: 12px 24px;
+        font-size: 18px;
+    }
+
+    #paymentMethodDropdown {
+        padding: 12px 24px;
+        font-size: 18px;
+    }
+
+    #submitTransactionButton {
+        margin-top: 25px;
+        padding: 16px 32px;
+        font-size: 24px;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    #header {
+        padding: 10px;
+    }
+
+    #headerIcon {
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+    }
+
+    #headerHead {
+        font-size: 32px;
+    }
+
+    #addTransactionContainer {
+        padding: 10px;
+    }
+
+    #addTransactionHead {
+        font-size: 30px;
+    }
+
+    #transactionTypeButtonBox {
+        margin-top: 15px;
+        width: 100%;
+    }
+
+    .transactionTypeButtons {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    #titleAmountInputBox {
+        margin-top: 25px;
+        width: 90%;
+    }
+
+    #titleInput,
+    #amountInput {
+        width: 100%;
+        margin-bottom: 15px;
+        padding: 8px 16px;
+        font-size: 16px;
+    }
+
+    #dropdownBox {
+        width: 100%;
+    }
+
+    #categoryDropdown {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+
+    #paymentMethodDropdown {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+
+    #submitTransactionButton {
+        margin-top: 25px;
+        padding: 12px 24px;
+        font-size: 18px;
+    }
+
+}
